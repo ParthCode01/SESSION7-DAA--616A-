@@ -31,7 +31,7 @@ void insert(Node* &head,int val)
 }
 void deletevalue(Node* &head,int val)
 {
-    if(head==NULL)
+    if(head==NULL) 
     {
         cout<<"List is empty";
         return;
