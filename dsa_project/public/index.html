@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Ticket System - Queue Data Structure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Train Ticket Management System</h1>
+            <p class="subtitle">Queue Data Structure Implementation (FIFO - First In First Out)</p>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Panel - Actions -->
+            <div class="panel actions-panel">
+                <h2>Actions</h2>
+                
+                <!-- Book Ticket Form -->
+                <div class="action-card">
+                    <h3>Book Ticket</h3>
+                    <p class="description">Add passenger to waiting list (Enqueue operation)</p>
+                    <input 
+                        type="text" 
+                        id="passengerName" 
+                        placeholder="Enter passenger name"
+                        onkeypress="handleEnter(event)"
+                    >
+                    <button onclick="bookTicket()" class="btn btn-primary">Book Ticket</button>
+                </div>
+
+                <!-- Serve Passenger -->
+                <div class="action-card">
+                    <h3>Serve Passenger</h3>
+                    <p class="description">Issue ticket to next passenger (Dequeue operation)</p>
+                    <button onclick="servePassenger()" class="btn btn-success">Serve Next</button>
+                </div>
+
+                <!-- Show Next Passenger -->
+                <div class="action-card">
+                    <h3>View Next Passenger</h3>
+                    <p class="description">View who's next in line (Front operation)</p>
+                    <button onclick="showNext()" class="btn btn-info">Show Next</button>
+                </div>
+
+                <!-- Clear Queue -->
+                <div class="action-card">
+                    <h3>Clear Queue</h3>
+                    <p class="description">Remove all passengers from waiting list</p>
+                    <button onclick="clearQueue()" class="btn btn-danger">Clear All</button>
+                </div>
+            </div>
+
+            <!-- Right Panel - Waiting List -->
+            <div class="panel waiting-panel">
+                <h2>Waiting List</h2>
+                
+                <!-- Queue Stats -->
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Passengers:</span>
+                        <span class="stat-value" id="totalCount">0</span>
+                    </div>
+                </div>
+
+                <!-- Queue Visualization -->
+                <div class="queue-container">
+                    <div class="queue-label">← Front (First Out)</div>
+                    <div id="queueList" class="queue-list">
+                        <div class="empty-message">No passengers in queue</div>
+                    </div>
+                    <div class="queue-label">Rear (Last In) →</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Message Display -->
+        <div id="messageBox" class="message-box"></div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Queue Operations: Enqueue (push) • Dequeue (pop) • Front (peek) • isEmpty • Size</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

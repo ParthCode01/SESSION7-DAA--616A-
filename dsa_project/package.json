@@ -1,0 +1,16 @@
+{
+  "name": "train-ticket-system",
+  "version": "1.0.0",
+  "description": "Train Ticket System using Queue Data Structure",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["queue", "data-structure", "train-ticket"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}
